@@ -227,7 +227,7 @@
     <xsd:complexType name="extended_czas_trwania">
     <xsd:simpleContent>
       <xsd:extension base="powierzchnia_type">
-        <xsd:attribute name="jednostka" type="xsd:string" use="required"/>
+        <xsd:attribute name="jednostka" type="xsd:string" use="optional"/>
       </xsd:extension>
     </xsd:simpleContent>
   </xsd:complexType>
