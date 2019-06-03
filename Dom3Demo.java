@@ -101,12 +101,12 @@ public class Dom3Demo {
 				Attr attr_plec = document.createAttribute("plec");
 				Attr attr_id = document.createAttribute("id");
 
-				if(elTrener.hasAttribute("plec"))
+				if(!elTrener.hasAttribute("plec"))
 					elTrener.setAttribute("plec", "m");
 
 				elTrener.setAttribute("id", "");
 
-				if(attr_id.getValue()==pusty){
+				if(attr_id.getValue()==""){
 					elTrener.removeAttribute("id");
 					elTrener.setAttribute("id", "blabla");
 					attr_id.setValue("t5");
@@ -117,7 +117,8 @@ public class Dom3Demo {
 				elIme.setTextContent("Konrad");
 				elNaz.setTextContent("Konradowski");
 				elPesel.setTextContent("85101001234");
-				elMiasto.setTextContent("ul. Moreno");
+				elMiasto.setTextContent("Krakow");
+				elUlica.setTextContent("ul. Moreno");
 				elNumer.setTextContent("123");
 
 				elTrener.appendChild(elIme);
@@ -158,14 +159,13 @@ public class Dom3Demo {
 
 
 			Node elem2 = document.getLastChild();
-			Node elem3 = elem2.getLastChild();
 
-			NodeList bl =  elem3.getChildNodes();
+			NodeList bl =  elem2.getChildNodes();
 
 			for(int i=0; i< bl.getLength(); i++) {
 				if(bl.item(i).getNodeType() == Node.ELEMENT_NODE){
 			Element n = (Element) bl.item(i);
-			n.setAttribute("czySprawny", "tak");
+			n.setAttribute("DodanyAtrybut", "tak");
 				}
 			}
 
